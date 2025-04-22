@@ -12,7 +12,7 @@ resource "docker_image" "simplegoservice" {
   keep_locally = true       // keep image after "destroy"
 }
 resource "docker_container" "nginx" {
-  image = docker_image.nginx.image_id
+  image = docker_image.simplegoservice.image_id
   name  = var.container_name
   ports {
     internal = 80
